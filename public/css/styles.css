@@ -1,0 +1,203 @@
+/* public/css/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --blue-light:  #92DAF2;
+  --green:       #9CD814;
+  --blue-dark:   #1A48AA;
+  --bg:          #f5f7fa;
+  --text:        #333;
+  --correct:     #28a745;
+  --wrong:       #ccc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0; padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Loader */
+#loader {
+  position: fixed; top:0; left:0;
+  width:100%; height:100%;
+  background:#fff;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  z-index:9999;
+}
+#loader .logo { width:150px; margin-bottom:2rem; }
+#loader .slogan {
+  font-size:2rem; font-weight:600;
+  color:var(--blue-dark);
+}
+
+/* Header */
+header {
+  background:var(--blue-dark);
+  padding:1rem 2rem;
+  display:flex; align-items:center;
+}
+header .logo { width:40px; margin-right:1rem; }
+header h1 {
+  color:#fff; font-weight:500; font-size:1.5rem;
+}
+
+/* Center login/register */
+main {
+  flex:1;
+  display:flex; align-items:center; justify-content:center;
+  flex-direction:column;
+  padding:2rem;
+}
+
+/* Card container (login/register) */
+.container {
+  background:#fff;
+  max-width:400px; width:100%;
+  padding:2rem;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  margin:0 auto;
+}
+.container h2 {
+  text-align:center;
+  margin-bottom:1.5rem;
+  color:var(--blue-dark);
+}
+
+/* Forms */
+input, select, button {
+  width:100%; padding:0.75rem 1rem;
+  margin-bottom:1.25rem;
+  font-size:1rem;
+  border:1px solid #ccc;
+  border-radius:4px;
+  font-family:inherit;
+}
+input:focus, select:focus {
+  border-color:var(--green);
+  outline:none;
+}
+button {
+  background:var(--blue-dark);
+  color:#fff;
+  border:none;
+  font-weight:600;
+  cursor:pointer;
+  transition:background 0.3s;
+}
+button:hover {
+  background:var(--green);
+}
+
+/* Messages & links */
+.message {
+  text-align:center; margin-bottom:1rem;
+  color:#e74c3c;
+}
+p a {
+  color:var(--blue-dark); text-decoration:none;
+}
+p a:hover {
+  text-decoration:underline;
+}
+
+/* ————— Comprehension pages ————— */
+
+/* …keep all your existing styles above… */
+
+/* ————— Comprehension pages ————— */
+
+.grade-page {
+  width: 80%;               /* back to 80% container */
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.comprehension-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  display: flex; flex-direction: column;
+  width: 100%;
+}
+.comprehension-card h2 {
+  margin-bottom: 1rem; color: var(--blue-dark);
+}
+.comprehension-card .passage {
+  font-size: 0.95rem; margin-bottom: 1rem;
+}
+.comprehension-card p {
+  font-weight: 500; margin: 0.75rem 0 0.25rem;
+}
+
+/* Labels: text first, radio after, aligned on the same baseline */
+.comprehension-card label {
+  display: inline-flex;            /* shrink‑wrap */
+  flex-direction: row-reverse;     /* text → radio */
+  align-items: baseline;           /* baseline alignment */
+  gap: 0.5rem;
+  margin: 0.25rem 0;
+  padding: 0.25rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+  text-align: left;
+}
+.comprehension-card label input {
+  vertical-align: baseline;        /* ensure radio lines up */
+}
+
+/* Highlighting (unchanged) */
+label.correct-answer { background: var(--correct); color: #fff; }
+label.wrong-answer   { background: var(--wrong);   color: #666; }
+
+/* Submit button & score (unchanged) */
+.submit-btn {
+  margin: 2rem auto 0;
+  padding: 1rem; font-size: 1.1rem;
+  width: 70%; max-width:300px;
+  background: var(--blue-dark); color: #fff;
+  border:none; border-radius:6px;
+  cursor:pointer; transition:background 0.3s;
+}
+.submit-btn:hover { background: var(--green); }
+
+.result {
+  margin-top:1.5rem;
+  font-size:2rem; font-weight:700;
+  text-align:center; color:var(--blue-dark);
+}
+
+/* Teacher Dashboard Table Styling */
+#scores-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.1rem;              /* larger text */
+}
+#scores-table th,
+#scores-table td {
+  border: 1px solid var(--text);  /* lines around every cell */
+  padding: 0.75rem;               /* breathing room */
+  text-align: left;               /* left‑aligned text */
+}
+#scores-table th {
+  background: var(--blue-light);  /* header background */
+  color: var(--blue-dark);
+  font-weight: 600;
+}
+#scores-table tr:nth-child(even) {
+  background: #f0f0f0;            /* striped rows */
+}

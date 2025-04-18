@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Portal – Register</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/loader.js" defer></script>
+  <script type="module" src="js/register.js" defer></script>
+</head>
+<body>
+  <div id="loader">
+    <img src="logo.png" alt="Logo" class="logo">
+    <div class="slogan"></div>
+  </div>
+  <header>
+    <img src="logo.png" alt="Logo" class="logo">
+    <h1>School Portal</h1>
+  </header>
+  <main>
+    <div class="container">
+      <h2>Register</h2>
+      <form id="register-form">
+        <input type="text" id="username" placeholder="Your name" required>
+        <input type="email" id="email" placeholder="Your email" required>
+        <input type="password" id="password" placeholder="Choose a password" required>
+        <label for="role">I am a:</label>
+        <select id="role" name="role">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p id="message" class="message"></p>
+      <p>Already have an account? <a href="index.html">Log in</a></p>
+    </div>
+  </main>
+</body>
+</html>
